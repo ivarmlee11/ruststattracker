@@ -7,7 +7,7 @@ rustats.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
   };
 
   $http(req).then(function success(res) {
-    console.log(res);
+    $scope.response = res;
   }, function error(res) {
     console.log(res);
   });
