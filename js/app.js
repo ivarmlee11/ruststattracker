@@ -6,8 +6,11 @@ rustats.controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
     method: 'GET'
   };
 
+  $scope.players = [];
+
   $http(req).then(function success(res) {
-    $scope.response = res;
+    $scope.players = res.data.players;
+    console.log(res.data.players);
   }, function error(res) {
     console.log(res);
   });
