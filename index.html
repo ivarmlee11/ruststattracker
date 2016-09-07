@@ -11,20 +11,17 @@
 </head>
 <body>
   <div ng-controller="HomeCtrl">
-  <form class="form" ng-submit="search()">
+  <form class="form" ng-submit="search()" ng-click="">
     <div class="form-group">
       <label>Search for a Player:</label>
       <input type="text" class="form-control" ng-model="searchTerm">
       <input type="submit" class="btn btn-primary">
     </div>
   </form>
-<!--   <div class="well" ng-repeat="player in players track by $index">
-    {{player.playerName}}
-  </div> -->
   <div class="well">
-    <ul>
-      <li>{{player}}</li>
-      <li ng-repeat="(key, value) in playerStats">{{key}} - {{value}}</li>
+    <ul class="list-group">
+      <li class="list-group-item">{{player}}{{message}}</li>
+      <li ng-repeat="(key, value) in playerStats" class="list-group-item">{{key}} - {{value}}</li>
     </ul>
   </div>
   </div>
