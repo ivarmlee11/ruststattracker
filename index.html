@@ -11,9 +11,22 @@
 </head>
 <body>
   <div ng-controller="HomeCtrl">
-    <div class="well" ng-repeat="player in players track by $index">
-      {{player.playerName}}
+  <form class="form" ng-submit="search()">
+    <div class="form-group">
+      <label>Search for a Player:</label>
+      <input type="text" class="form-control" ng-model="searchTerm">
+      <input type="submit" class="btn btn-primary">
     </div>
+  </form>
+<!--   <div class="well" ng-repeat="player in players track by $index">
+    {{player.playerName}}
+  </div> -->
+  <div class="well">
+    <ul>
+      <li>{{player}}</li>
+      <li ng-repeat="(key, value) in playerStats">{{key}} - {{value}}</li>
+    </ul>
+  </div>
   </div>
 </body>
 </html>
